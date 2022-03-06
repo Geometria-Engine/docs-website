@@ -3,33 +3,33 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Introduction - Geometria Documentation</title>
+        <title>Your First Hello World! - Geometria Documentation</title>
         <!-- Custom HTML head -->
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
-        <link rel="icon" href="favicon.svg">
-        <link rel="shortcut icon" href="favicon.png">
-        <link rel="stylesheet" href="css/variables.css">
-        <link rel="stylesheet" href="css/general.css">
-        <link rel="stylesheet" href="css/chrome.css">
-        <link rel="stylesheet" href="css/print.css" media="print">
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
         <!-- Fonts -->
-        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="fonts/fonts.css">
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="highlight.css">
-        <link rel="stylesheet" href="tomorrow-night.css">
-        <link rel="stylesheet" href="ayu-highlight.css">
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
     </head>
     <body>
         <!-- Provide site root to javascript -->
         <script type="text/javascript">
-            var path_to_root = "";
+            var path_to_root = "../";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
@@ -75,7 +75,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="get-started/get-started.html"><strong aria-hidden="true">2.</strong> Get Started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="get-started/hello-world.html"><strong aria-hidden="true">2.1.</strong> Your First Hello World!</a></li><li class="chapter-item expanded "><a href="get-started/square.html"><strong aria-hidden="true">2.2.</strong> Your First Square!</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="../get-started/get-started.html"><strong aria-hidden="true">2.</strong> Get Started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../get-started/hello-world.html" class="active"><strong aria-hidden="true">2.1.</strong> Your First Hello World!</a></li><li class="chapter-item expanded "><a href="../get-started/square.html"><strong aria-hidden="true">2.2.</strong> Your First Square!</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -107,7 +107,7 @@
                     <h1 class="menu-title">Geometria Documentation</h1>
 
                     <div class="right-buttons">
-                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
                     </div>
@@ -134,40 +134,66 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="geometria-engine"><a class="header" href="#geometria-engine">Geometria Engine</a></h1>
-<h2 id="what-is-the-geometria-engine"><a class="header" href="#what-is-the-geometria-engine">What is the Geometria Engine?</a></h2>
-<p>Geometria is a multipurpose engine (mostly used for games, but can be used for making all kinds of programs/applications)
-that it focuses on:</p>
-<ul>
-<li>Bringing high fidelity graphics on low-end devices (and expand the capabilities on high-end devices).</li>
-<li>Allowing the developer/programmer/user as much control as it can from the engine.</li>
-</ul>
-<h2 id="about-geometria"><a class="header" href="#about-geometria">About Geometria</a></h2>
-<h3 id="graphics"><a class="header" href="#graphics">Graphics</a></h3>
-<p>This engine comes with a rendering system that instead of deleting data and generating new one each frame,
-it recycles data from the last frame and modifies the data that changed. With this you can save a lot of
-CPU power and being able to build from small, to big and complex scenes without sacrificing detail and
-performance.</p>
-<h3 id="control"><a class="header" href="#control">Control</a></h3>
-<p>In most game engines, by default they do most of the tasks for you. But sometimes those tasks don't work in
-specific cases or make things worse, and those systems aren't flexible enough overall, and in the worst case
-scenario, you can't go inside the code and edit, modify or create according what you need, forcing developers to start &quot;micro-optimizing&quot; or making systems that workaround that system in order to keep the project they've been 
-working for so long alive.</p>
-<p>So instead, Geometria takes a different approach and instead of acting as an engine that controls everything,
-it acts like a toolkit with automated systems as an option, that can either control everything,
-being completely disabled, work partially, or if nothing of this suits your needs, you can go ahead and modify 
-them internally without any consequences whatsoever.</p>
-<p><strong>YOU</strong> are the one in control of the engine.</p>
-<h3 id="beginner-friendly"><a class="header" href="#beginner-friendly">Beginner-friendly</a></h3>
-<p>Most tools you encounter start with being complex out of the box most of the time, some of them being so hard
-that following a simple tutorial just to print &quot;Hello World!&quot; is incredibly daunting.
-In here, setting up a scene and start building it is quick with just a few lines of code!</p>
+                        <h1 id="your-first-hello-world"><a class="header" href="#your-first-hello-world">Your First Hello World!</a></h1>
+<h2 id="know-your-environment"><a class="header" href="#know-your-environment">Know your environment</a></h2>
+<p>When you go to the source code of your project, you might end up seeing a lot of folders. It might be overwhelming but don't worry,
+all of the folders you see there are basically the entire engine, everything from rendering, to input management, to cores, everything is here!</p>
+<p>But we're not here to see all of them, you don't need to, because there's one folder that is not part of the engine but rather, its part of
+your game or application, which is called the &quot;Game&quot; folder.</p>
+<h2 id="game-folder"><a class="header" href="#game-folder">&quot;Game&quot; Folder</a></h2>
+<p>This folder is the heart of your application, in this folder not only there's gonna be your scripts, but also your images, sounds, all of your app's content!. And you're gonna see that the only thing that is inside there is only a file called &quot;GameMain.h&quot;.</p>
+<h2 id="gamemainh"><a class="header" href="#gamemainh">GameMain.h</a></h2>
+<p>This file is the entry of your application, where everything begins, and if you desire, where it ends. If you open it you're gonna see
+this chunk of code:</p>
+<pre><code class="language-c++">#pragma once
+
+#include &quot;geometria.h&quot;
+
+struct GameMain
+{
+	static void Init()
+	{
+		
+	}
+};
+</code></pre>
+<p>You have 2 things here, the <strong>GameMain</strong> struct, and the <strong>Init()</strong> void. GameMain obviously is the initialization of your game or app as
+the form of an entity. And Init() is the stuff that'll be executed once the game starts.</p>
+<p>See? This is easy so far! Let's print something to the game console, shall we?</p>
+<p>Let's add the classic &quot;std::cout&quot; message...</p>
+<pre><code class="language-c++">static void Init()
+{
+	std::cout &lt;&lt; &quot;Hello World!&quot; &lt;&lt; std::endl;	
+}
+</code></pre>
+<p>...and as a result, the whole script should look like this:</p>
+<pre><code class="language-c++">#pragma once
+
+#include &quot;geometria.h&quot;
+
+struct GameMain
+{
+	static void Init()
+	{
+		std::cout &lt;&lt; &quot;Hello World!&quot; &lt;&lt; std::endl;
+	}
+};
+</code></pre>
+<p>Once you've done this, compile the project and voalá!
+There's your first hello world!</p>
+<p><img src="../images/hello-world-1.png" alt="There it is!" /></p>
+<p>Congratulations! Now you know where your app is going to begin!
+But this is just only the beginning! Because next up is...</p>
+<p><a href="./square.html">Your First Square!</a></p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="next" href="get-started/get-started.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="prev" href="../get-started/get-started.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../get-started/square.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         <div style="clear: both"></div>
@@ -176,7 +202,10 @@ In here, setting up a scene and start building it is quick with just a few lines
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="next" href="get-started/get-started.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="prev" href="../get-started/get-started.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../get-started/square.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
@@ -200,12 +229,12 @@ In here, setting up a scene and start building it is quick with just a few lines
         <script type="text/javascript">
             window.playground_copyable = true;
         </script>
-        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
-        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
     </body>

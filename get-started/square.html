@@ -1,0 +1,279 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Your First Square! - Geometria Documentation</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="../get-started/get-started.html"><strong aria-hidden="true">2.</strong> Get Started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../get-started/hello-world.html"><strong aria-hidden="true">2.1.</strong> Your First Hello World!</a></li><li class="chapter-item expanded "><a href="../get-started/square.html" class="active"><strong aria-hidden="true">2.2.</strong> Your First Square!</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Geometria Documentation</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="your-first-square"><a class="header" href="#your-first-square">Your First Square!</a></h1>
+<p>If you already made your first hello world, you can see that in the game, there's nothing but a dark cyan background:</p>
+<p><img src="../images/square-1.png" alt="Dark Cyan BG" /></p>
+<p>What if we add something? Let's add a simple square!</p>
+<p>But first, you need to know about what &quot;Draw Calls&quot; are!</p>
+<h2 id="what-is-a-draw-call"><a class="header" href="#what-is-a-draw-call">What is a Draw Call?</a></h2>
+<p>A <strong>Draw Call</strong> is the instruction from the CPU to draw to the GPU. You basically get the data that you need first, 
+and then you make a draw call to push it to the GPU so it can render it and put it on the screen. 
+Draw Calls are used in everything that has graphics nowdays, even your favorite games, engines and even some apps
+use them for drawing with the GPU!</p>
+<h2 id="why-should-i-know-about-draw-calls"><a class="header" href="#why-should-i-know-about-draw-calls">Why should i know about Draw Calls?</a></h2>
+<p>You should know because, instead of having an entire system to handle the draw calls for you, you are the one
+in charge of instantiating them!</p>
+<p>You may think this is too much, but don't worry, its simple as it sounds and it comes with stuff that
+is going to be explained later.</p>
+<p>Let's go back to the <strong>Init()</strong> void where you did the first Hello World. And replace the print code, with this</p>
+<pre><code class="language-c++">static void Init()
+{
+	DrawCall* myDrawCall = SceneManager::MainScene().CreateDrawCall();
+}
+</code></pre>
+<p>Let's see what are we doing here, in here we're asking to the &quot;Main Scene&quot; (the one we're using by default) to
+create a Draw Call. So far so good, but if we compile, we're not gonna see anything yet.</p>
+<p>Remember what we talked earlier? Before rendering something, we need to add stuff into the Draw Call. That's
+where the &quot;Models&quot; come into place!</p>
+<h2 id="the-model"><a class="header" href="#the-model">The &quot;Model&quot;</a></h2>
+<p>A Model is basically the data we're sending to the Draw Call in form of an object (or a pointer, to be exact).
+This object could've be anything, from a square, to a big metropolis, to anything that contains vertices
+and indices!</p>
+<p>Let's add a Model! After the Draw Call creation, add this!</p>
+<pre><code class="language-c++">
+Model* model = new Model(Model::Primitives::SQUARE, Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(1, 1, 1));
+
+</code></pre>
+<p>Whoa whoa wait! What is all of this information?! What are these variables that we're passing inside the parenthesis!</p>
+<ul>
+<li>
+<p>Well, first, there's the vertex information! In there you send the data of the model in form of a list with Vector3s.
+This could've be tedious if you do it by hand sometimes, so the engine comes with presets already made, under the name
+of <strong>Primitives</strong>! One of them being the Square! (<code>Model::Primitives::SQUARE</code>).</p>
+</li>
+<li>
+<p>The second variable you send is the position, this one is in the form of a Vector3, inside you add the X, Y and Z
+position of where the object is gonna be in the scene: <code>Vector3(x, y, z)</code>.</p>
+</li>
+<li>
+<p>The third variable is the rotation, just like position, its in form of a Vector3 and inside you add the X, Y and Z
+rotation.</p>
+</li>
+<li>
+<p>And the last variable is the scale, same as rotation and position, in form of a Vector3, and you set how big it is.
+Something you should know about scaling is that the default size for each axis is &quot;1&quot;. If you add 0 it'll be so small
+it'll become invisible!</p>
+</li>
+</ul>
+<p>Now that you know what each variable you're adding to the model is. You can see that we're trying to create is: <strong>a Square in the
+center of the scene (0, 0, 0), without any rotation and with its normal scale.</strong></p>
+<p>Now we have the draw call, we have the model, let's add it, and you do this with this line!</p>
+<pre><code class="language-c++">
+RendererCore::AddModel(*model, myDrawCall-&gt;Target());
+
+</code></pre>
+<p>In the <code>RendererCore::AddModel(...)</code> function you pass the model you want to push to the Draw Call, and the Draw Call
+that you want the model to be used.</p>
+<p>The <code>Target()</code> function that the draw call is using is just a &quot;safe way&quot; to use it when adding models.<br />
+<em>(You can use <code>RendererCore::AddModel(*model, *myDrawCall);</code>, but it tends to have &quot;undefined behaviour&quot; on very complex scenarios)</em></p>
+<p>So the final result of the code looks like this:</p>
+<pre><code class="language-c++">#pragma once
+
+#include &quot;geometria.h&quot;
+
+struct GameMain
+{
+	static void Init()
+	{
+		DrawCall* myDrawCall = SceneManager::MainScene().CreateDrawCall();
+		Model* model = new Model(Model::Primitives::SQUARE, Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(1, 1, 1));
+		RendererCore::AddModel(*model, myDrawCall-&gt;Target());
+	}
+};
+</code></pre>
+<p>And if you compile the project, you can see that you have a Square in the Scene!</p>
+<p><img src="../images/square-2.png" alt="There it is!" /></p>
+<h2 id="want-something-more-simpler"><a class="header" href="#want-something-more-simpler">Want something more simpler?</a></h2>
+<p>When the game begins, by default it instantiates what is called, the &quot;Main Draw Call&quot;, this Draw Call is just like a normal one, but its always
+active and can't be deleted or removed.</p>
+<p>If you want, you can add the Square to the Main Draw Call instead of creating a new one,<br />
+(<em>If you don't add any draw call to the <code>RendererCore::AddModel()</code> function, it'll default to the Main Draw Call</em>)<br />
+and the code looks like this, and you're still going to have the same result:</p>
+<pre><code class="language-c++">static void Init()
+{
+	Model* model = new Model(Model::Primitives::SQUARE, Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(1, 1, 1));
+	RendererCore::AddModel(*model);
+}
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../get-started/hello-world.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../get-started/hello-world.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:3000/__livereload");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>
